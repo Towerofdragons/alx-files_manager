@@ -9,10 +9,10 @@ import router from './routes/index'
 const app = express();
 
 // Middleware setup
-app.use(bodyParser.json()); // Parse JSON bodies
-app.use(bodyParser.urlencoded({ extended: true })); // Parse URL-encoded bodies
-app.use(cors()); // Enable CORS
-app.use(morgan('dev')); // Log requests to the console
+// app.use(bodyParser.json()); // Parse JSON bodies
+// app.use(bodyParser.urlencoded({ extended: true })); // Parse URL-encoded bodies
+// app.use(cors()); // Enable CORS
+// app.use(morgan('dev')); // Log requests to the console
 
 // Basic routes
 app.use('/', router)
