@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const morgan = require('morgan');
 
+import router from './routes/index'
 // Initialize express app
 const app = express();
 
@@ -14,9 +15,7 @@ app.use(cors()); // Enable CORS
 app.use(morgan('dev')); // Log requests to the console
 
 // Basic routes
-app.get('/routes/index.js', (req, res) => {
-  res.status(200).send({ message: 'Welcome to the Express server!' });
-});
+app.use('/', router)
 
 // Start the server
 const PORT = process.env.PORT || 5000;

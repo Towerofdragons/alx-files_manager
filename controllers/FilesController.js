@@ -62,6 +62,7 @@ class FilesController {
 
     res.status(201).json({ id: result.insertedId, ...fileDocument });
   }
-}
+};
 
+const filesController = new FilesController();
 module.exports = FilesController;

@@ -1,4 +1,5 @@
 const db = require('../utils/db');
+const redisClient = require('../utils/redis');
 
 class UserController{
     static async postNew(req, res) {
@@ -35,7 +36,7 @@ class UserController{
         }
       }
 
-    async getMe(req, res) {
+    static async getMe(req, res) {
         const token = req.header('X-Token');
         if (!token) {
             return res.status(401).json({ error: 'Unauthorized' });
@@ -60,4 +61,4 @@ class UserController{
 };
 
 const userController = new UserController();
-module.exports= userController;
+module.exports= UserController;
