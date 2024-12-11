@@ -1,4 +1,4 @@
-const mongo = require('mongodb');
+const MongoClient = require('mongodb').MongoClient;
 
 class DBClient{
     constructor(){
