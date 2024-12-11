@@ -55,6 +55,8 @@ class UserController{
 
         return res.status(200).json({ id: user._id.toString(), email: user.email });
         }
+
+    
 };
 
 const userController = new UserController();
