@@ -10,7 +10,7 @@ class RedisClient{
     }
 
     isAlive(){
-        this.client.connected;
+        return this.client.connected;
     }
 
     async get(key){
@@ -24,7 +24,7 @@ class RedisClient{
     
     }
 
-    async set(key, value){
+    async set(key, value, duration){
         return new Promise((resolve, reject) => {
             this.client.setex(key, duration, value,(error) => {
                 if (error) {reject(error)}
